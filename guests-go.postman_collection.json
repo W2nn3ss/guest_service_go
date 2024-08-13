@@ -1,0 +1,142 @@
+{
+	"info": {
+		"_postman_id": "a5d43945-ebb7-4b54-b5b6-ed12e245ae54",
+		"name": "guests-go",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json",
+		"_exporter_id": "9037723"
+	},
+	"item": [
+		{
+			"name": "Создание гостя",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": {
+						"token": "e49f29370fbcc4ef2c248d2f0fafd3be"
+					}
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"first_name\":\"Test\",\r\n    \"last_name\":\"Testov\",\r\n    \"email\":\"tes@test.ru\",\r\n    \"phone\":\"+79342337724\",\r\n    \"country\":\"\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "localhost:8080/guests"
+			},
+			"response": []
+		},
+		{
+			"name": "Изменить гостя",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": {
+						"token": "e49f29370fbcc4ef2c248d2f0fafd3be"
+					}
+				},
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"first_name\":\"Test\",\r\n    \"last_name\":\"Testov\",\r\n    \"email\":\"1test7@test.ru\",\r\n    \"phone\":\"+79991113399\",\r\n    \"country\":\"\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "localhost:8080/guests/1"
+			},
+			"response": []
+		},
+		{
+			"name": "Получить список гостей",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": {
+						"token": "e49f29370fbcc4ef2c248d2f0fafd3be"
+					}
+				},
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"first_name\":\"Test\",\r\n    \"last_name\":\"Testov\",\r\n    \"email\":\"1test7@test.ru\",\r\n    \"phone\":\"+79991113322\",\r\n    \"country\":\"\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "localhost:8080/guests"
+			},
+			"response": []
+		},
+		{
+			"name": "Получить гостя по id",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					},
+					{
+						"key": "Authorization",
+						"value": "Bearer e49f29370fbcc4ef2c248d2f0fafd3be"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "localhost:8080/guests/1"
+			},
+			"response": []
+		},
+		{
+			"name": "Удалить гостя",
+			"request": {
+				"method": "DELETE",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					},
+					{
+						"key": "Authorization",
+						"value": "Bearer e49f29370fbcc4ef2c248d2f0fafd3be"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "localhost:8080/guests/3"
+			},
+			"response": []
+		}
+	]
+}
